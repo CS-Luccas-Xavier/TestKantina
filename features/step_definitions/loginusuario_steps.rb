@@ -12,7 +12,7 @@ Quando(/^escolher a conta válida$/) do
 end
 
 Então(/^a página de fatura será carregada\.$/) do
-  @pages.check_visible_actual_value
+  fail "Página não carregada, componente não existe" unless @pages.check_visible_actual_value
 end
 
 Quando(/^escolher uma conta inválida$/) do
@@ -20,5 +20,5 @@ Quando(/^escolher uma conta inválida$/) do
 end
 
 Então(/^uma mensagem será exibida informando a máscara correta$/) do
-  @pages.check_msg_invalid_user
+  fail "Mensagem de erro diferente do esperado" unless @pages.check_msg_invalid_user
 end

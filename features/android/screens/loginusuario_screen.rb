@@ -5,7 +5,7 @@ class LoginusuarioScreen < AndroidScreenBase
   # Declare all the elements of this screen
   element(:btn_login)               { 'button_google_sign_in' }
   element(:btn_choose_user)         { 'account_display_name' }
-  element(:btn_choose_new_user)         { 'button2' }
+  element(:btn_choose_new_user)     { 'button2' }
 
   def touch_btn_login
     touch_screen_element(btn_login)

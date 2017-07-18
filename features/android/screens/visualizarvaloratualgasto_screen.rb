@@ -7,8 +7,8 @@ class VisualizarvaloratualgastoScreen < AndroidScreenBase
   element(:tv_closing_date)         { 'text_view_last_invoice' }
   element(:btn_purchase)            { 'purchase_fab' }
 
-  def count_buys
-
+  def delete_all_buys
+    #pending
   end
 
   def check_visible_actual_value
@@ -16,7 +16,8 @@ class VisualizarvaloratualgastoScreen < AndroidScreenBase
   end
 
   def check_content_actual_value
-    tv_actual_value == 0
+    tv_actual_value != 0
+    #tv_actual_value == 0
   end
 
   def check_closing_date
