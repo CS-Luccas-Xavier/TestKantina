@@ -8,7 +8,8 @@ class VisualizarvaloratualgastoScreen < AndroidScreenBase
   element(:btn_purchase)            { 'purchase_fab' }
 
   def delete_all_buys
-    #pending
+    system("curl -X DELETE \ 'https://kantina-3606f.firebaseio.com/usuarios/Luccas Xavier.json'")
+    sleep(4)
   end
 
   def check_visible_actual_value
@@ -16,8 +17,8 @@ class VisualizarvaloratualgastoScreen < AndroidScreenBase
   end
 
   def check_content_actual_value
-    tv_actual_value != 0
-    #tv_actual_value == 0
+    temp = query("* id:'text_view_price_last_purchase'", :text)
+    temp[0] == '0.00'
   end
 
   def check_closing_date

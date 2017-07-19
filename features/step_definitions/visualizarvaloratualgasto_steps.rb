@@ -4,7 +4,7 @@ Dado(/^que a aplicação esteja na página de fatura$/) do
 end
 
 Dado(/^não existam compras cadastradas para esse usuário$/) do
-  fail "Pré-requisito não atendido, usuario possui compras." unless @pages.delete_all_buys
+  @pages.delete_all_buys
 end
 
 Quando(/^eu verificar se o campo de valor está sendo exibido$/) do
@@ -12,7 +12,7 @@ Quando(/^eu verificar se o campo de valor está sendo exibido$/) do
 end
 
 Então(/^validaremos se o valor está informado corretamente \(zero\)\.$/) do
-  fail "Valor inválido" unless @pages.check_content_actual_value0
+  fail "Valor inválido" unless @pages.check_content_actual_value
 end
 
 #Quando(/^eu verificar se o campo da data de fechamento está preenchida$/) do
