@@ -8,7 +8,7 @@ class VisualizarvaloratualgastoScreen < AndroidScreenBase
   element(:btn_purchase)            { 'purchase_fab' }
 
   def delete_all_buys
-    system("curl -X DELETE \ 'https://kantina-3606f.firebaseio.com/usuarios/Luccas Xavier.json'")
+    system("curl -X DELETE \ 'https://kantina-3606f.firebaseio.com/usuarios/Luccas Xavier/compras.json'")
     sleep(4)
   end
 
