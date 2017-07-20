@@ -24,8 +24,12 @@ class LoginusuarioScreen < AndroidScreenBase
   end
 
   def check_msg_invalid_user
-    temp = query("*")
+    temp = query("*", :text)
     temp.include?("Please sign in using a Concrete account.")
+  end
+
+  def check_btn_login_visible
+    visible?(btn_login)
   end
 
 end

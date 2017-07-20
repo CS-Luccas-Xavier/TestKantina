@@ -10,6 +10,7 @@ Então(/^meu status de pagamento é mostrado para pago$/) do
 end
 
 Quando(/^fecho a fatura do mês anterior$/) do
+  @pages = page(FaturaScreen).await(timeout: 5)
   @pages.invoice_false
 end
 

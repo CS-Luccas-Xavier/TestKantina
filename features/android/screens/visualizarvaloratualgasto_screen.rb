@@ -5,7 +5,7 @@ class VisualizarvaloratualgastoScreen < AndroidScreenBase
   # Declare all the elements of this screen
   element(:tv_actual_value)         { 'text_view_price_last_purchase' }
   element(:tv_closing_date)         { 'text_view_last_invoice' }
-  element(:btn_purchase)            { 'purchase_fab' }
+  element(:btn_purchase)            { 'floating_action_button_purchase' }
 
   def delete_all_buys
     system("curl -X DELETE \ 'https://kantina-3606f.firebaseio.com/usuarios/Luccas Xavier/compras.json'")
