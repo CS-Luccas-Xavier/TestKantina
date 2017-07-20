@@ -1,7 +1,6 @@
 Quando(/^altero o status de pagamento da minha fatura anterior no firebase para Pago$/) do
   @pages = page(FaturaScreen).await(timeout: 5)
   @pages.invoice_true
-
 end
 
 Então(/^meu status de pagamento é mostrado para pago$/) do
