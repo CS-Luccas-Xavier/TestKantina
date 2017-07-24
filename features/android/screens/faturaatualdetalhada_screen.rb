@@ -29,3 +29,5 @@ class FaturaatualdetalhadaScreen < AndroidScreenBase
     temp.include?("You did not buy anything this month yet.")
   end
 end
+
+#comment
