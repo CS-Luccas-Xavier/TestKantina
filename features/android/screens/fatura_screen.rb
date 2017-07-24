@@ -21,7 +21,7 @@ class FaturaScreen < AndroidScreenBase
   end
 
   def check_status_not_paid
-    temp = query("* id:'image_payment_status'", :contentDescription)
+    temp = query("* id:'image_payment_status'", :contentDescription)asd asdasd
     temp[0] == "invoice not paid image"
   end
 
