@@ -10,6 +10,8 @@ class SelecinaritemScreen < AndroidScreenBase
   element(:btnCancelBuy)          { 'button2' }
 
   def touch_product
+    set_product_name()
+    set_product_price()
     touch_element_by_index(tVproductName, 0)
   end
 

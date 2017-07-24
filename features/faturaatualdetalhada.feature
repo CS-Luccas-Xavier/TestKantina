@@ -13,6 +13,7 @@ Cenario: Verificar se os itens comprados estão aparecendo na tela.
 
 Cenario: Verificar se o valor total atual está igual a soma dos produtos listados.
   Dado que a aplicação esteja na página de fatura
+  E que a aplicação esteja na página de lista de produtos
   Quando eu selecionar um produto
   E confirmar a compra
   Então a tela volta para a pagina de fatura

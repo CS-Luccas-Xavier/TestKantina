@@ -1,6 +1,7 @@
 Dado(/^que a aplicação esteja na página de fatura$/) do
   sleep(2)
   @pages = page(VisualizarvaloratualgastoScreen).await(timeout: 5)
+  @pages.keep_actual_value
 end
 
 Dado(/^não existam compras cadastradas para esse usuário$/) do

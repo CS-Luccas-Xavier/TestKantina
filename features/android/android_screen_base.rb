@@ -1,6 +1,11 @@
 require 'calabash-android/abase'
 
 class AndroidScreenBase < Calabash::ABase
+
+  @@product_name
+  @@product_price
+  @@old_actual_value
+
   def self.element(element_name, &block)
     define_method(element_name.to_s, *block)
   end
@@ -196,4 +201,20 @@ class AndroidScreenBase < Calabash::ABase
     # Clicking in the Done button
     touch "* id:'button1'"
   end
+
+  def set_product_name
+    product_name = query("* id:'text_view_product_name'", :text)
+    @@product_name = product_name[0]
+  end
+
+  def set_product_price
+    product_price = query("* id:'text_view_product_price'", :text)
+    @@product_price = product_price[0]
+  end
+
+  def set_old_value
+    value = query("* id:'text_view_price_last_purchase'", :text)
+    @@old_actual_value = value[0]
+  end
+
 end

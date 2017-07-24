@@ -7,12 +7,12 @@ class FaturaScreen < AndroidScreenBase
 
   # Declare all actions of this screen
   def invoice_true
-    system("curl -X PATCH -d '{\"paid\":true}' 'https://kantina-3606f.firebaseio.com/usuarios/Luccas Xavier/invoices/previous.json'")
+    system("curl -X PATCH -d '{\"paid\":true, \"value\": 12.21}' 'https://kantina-3606f.firebaseio.com/usuarios/Luccas Xavier/invoices/previous.json'")
     sleep(4)
   end
 
   def invoice_false
-    system("curl -X PATCH -d '{\"paid\":false}'  'https://kantina-3606f.firebaseio.com/usuarios/Luccas Xavier/invoices/previous.json'")
+    system("curl -X PATCH -d '{\"paid\":false, \"value\": 12.21}'  'https://kantina-3606f.firebaseio.com/usuarios/Luccas Xavier/invoices/previous.json'")
     sleep(4)
   end
 
