@@ -28,7 +28,7 @@ Cenario: Limpar campo de busca
   Dado que o usuário tenha logado com sucesso
   E que a aplicação esteja na página de lista de produtos
   Quando eu acessar o item de filtro
-  E preencher o campo com algum valor
+  E preencher o campo com algum valor qualquer
   E clicar no X para limpar o filtro
   Então todos os produtos deverão aparecer na tela.
 
