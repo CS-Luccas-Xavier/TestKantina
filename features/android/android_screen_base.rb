@@ -5,6 +5,9 @@ class AndroidScreenBase < Calabash::ABase
   @@product_name
   @@product_price
   @@old_actual_value
+  @@screen_name_products
+  @@screen_price_products
+  @@first_product
 
   def self.element(element_name, &block)
     define_method(element_name.to_s, *block)
