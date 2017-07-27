@@ -14,12 +14,13 @@ Então(/^o valor atual total é incrementado com o valor do produto comprado$/) 
 end
 
 Então(/^uma mensagem será exibida para confirmar que não existe compra no mês atual$/) do
+  @pages = page(VisualizarvaloratualgastoScreen).await(timeout: 5)
   fail 'Mensagem não exibida' unless @pages.check_zero_purchase
 end
 
 Quando(/^existam mais de uma compra em datas diferentes$/) do
-  system("curl -X POST -d '{ \"buyDate\": \"01/07/17\", \"productCategory\": \"Bebida\", \"productName\": \"TESTE LUCCAS\", \"productPrice\": 123.45, \"userEmail\": \"Luccas Xavier\" }' 'https://kantina-3606f.firebaseio.com/usuarios/Luccas Xavier/compras.json'")
-  system("curl -X POST -d '{ \"buyDate\": \"09/07/17\", \"productCategory\": \"Comida\", \"productName\": \"LUCCAS PRODUCTS\", \"productPrice\": 654.32, \"userEmail\": \"Luccas Xavier\" }' 'https://kantina-3606f.firebaseio.com/usuarios/Luccas Xavier/compras.json'")
+  system("curl -X PUT -d '{ \"buyDate\": 1498939416000, \"firebasePushID:\": \"321123\", \"productCategory\": \"Bebida\", \"productName\": \"TESTE LUCCAS\", \"productPrice\": 123.45, \"userDisplayName\": \"Luccas Xavier\" }' 'https://kantina-3606f.firebaseio.com/usuarios/Luccas Xavier/compras/321123.json'")
+  system("curl -X PUT -d '{ \"buyDate\": 1500062616000, \"firebasePushID:\": \"123456\", \"productCategory\": \"Comida\", \"productName\": \"LUCCAS PRODUCTS\", \"productPrice\": 654.32, \"userDisplayName\": \"Luccas Xavier\" }' 'https://kantina-3606f.firebaseio.com/usuarios/Luccas Xavier/compras/123456.json'")
 end
 
 Então(/^as compras estarão ordenadas da mais recente para mais antiga$/) do

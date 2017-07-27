@@ -23,7 +23,7 @@ class VisualizarvaloratualgastoScreen < AndroidScreenBase
 
   def check_content_actual_value
     temp = query("* id:'text_view_price_last_purchase'", :text)
-    temp[0] == '0.00'
+    temp[0] == "0.00"
   end
 
   def check_closing_date
