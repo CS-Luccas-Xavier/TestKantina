@@ -15,3 +15,11 @@ Cenario: Selecionar produto e cancelar a compra
   Quando eu selecionar um produto
   E cancelar a compra
   Então o produto não será comprado
+
+Cenario: Tentar realizar uma compra e cair a conexão com a internet
+  Dado que o usuário tenha logado com sucesso
+  E que a aplicação esteja na página de lista de produtos
+  E que o celular esteja em modo avião
+  Quando eu selecionar um produto
+  E confirmar a compra
+  Então uma mensagem será exibida informando que o celular está sem conexão

@@ -5,7 +5,7 @@ Funcionalidade: Selecionar item para compra
 
 Contexto:
   Dado que a aplicação esteja na página de login
-  
+
 Cenario: Logar com usuário inválido Ex: @gmail
   Quando eu tocar para realizar login
   E escolher uma conta inválida
@@ -15,3 +15,9 @@ Cenario: Logar com usuário válido @concrete
   Quando eu tocar para realizar login
   E escolher a conta válida
   Então a página de fatura será carregada.
+
+Cenario: Tentar realizar login sem conexão com a internet
+  Dado que o celular esteja em modo avião
+  Quando eu tocar para realizar login
+  E escolher a conta válida
+  Então uma mensagem será exibida informando que o celular está sem conexão
