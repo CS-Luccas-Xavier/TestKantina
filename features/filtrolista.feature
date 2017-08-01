@@ -29,7 +29,7 @@ Cenario: Limpar campo de busca
   E clicar no X para limpar o filtro
   Então todos os produtos deverão aparecer na tela.
 
-Cenario: Seta deverá desaparecer ao iniciar filtro
-  Dado que a aplicação esteja na página de lista de produtos
-  Quando eu acessar o item de filtro
-  Então a seta para voltar para outra página deverá sumir
+#Cenario: Seta deverá desaparecer ao iniciar filtro
+#  Dado que a aplicação esteja na página de lista de produtos
+#  Quando eu acessar o item de filtro
+#  Então a seta para voltar para outra página deverá sumir

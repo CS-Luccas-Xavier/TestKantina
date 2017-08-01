@@ -8,13 +8,8 @@ class VisualizarvaloratualgastoScreen < AndroidScreenBase
   element(:btn_purchase)            { 'floating_action_button_purchase' }
 
   def delete_all_buys
-    system("curl -X DELETE \ 'https://kantina-3606f.firebaseio.com/usuarios/Luccas Xavier/compras.json'")
+    system("curl -X DELETE \ 'https://kantina-3606f.firebaseio.com/desenvolvimento/usuarios/Luccas Xavier/compras.json'")
     sleep(4)
-  end
-
-  def keep_actual_value
-    temp = query("* id:'text_view_price_last_purchase'", :text)
-    set_old_value()
   end
 
   def check_visible_actual_value

@@ -68,12 +68,12 @@ class DeletarcompraScreen < AndroidScreenBase
   def add_recently_purchase
     time = Time.now.to_i
     time = time * 1000
-    system("curl -X PUT -d '{ \"buyDate\": #{time}, \"firebasePushID:\": \"123456\", \"productCategory\": \"Comida\", \"productName\": \"LUCCAS PRODUCTS\", \"productPrice\": 654.32, \"userDisplayName\": \"Luccas Xavier\" }' 'https://kantina-3606f.firebaseio.com/usuarios/Luccas Xavier/compras/123456.json'")
+    system("curl -X PUT -d '{ \"buyDate\": #{time}, \"firebasePushID:\": \"12213\", \"productCategory\": \"Bebida\", \"productName\": \"LUCCAS TESTE NOVO\", \"productPrice\": 12.32, \"userDisplayName\": \"Luccas Xavier\" }' 'https://kantina-3606f.firebaseio.com/usuarios/Luccas Xavier/compras/12213.json'")
     sleep(3)
   end
 
   def add_old_purchase
-    system("curl -X PUT -d '{ \"buyDate\": 1501015508000, \"firebasePushID:\": \"123456\", \"productCategory\": \"Comida\", \"productName\": \"LUCCAS PRODUCTS\", \"productPrice\": 654.32, \"userDisplayName\": \"Luccas Xavier\" }' 'https://kantina-3606f.firebaseio.com/usuarios/Luccas Xavier/compras/123456.json'")
+    system("curl -X PUT -d '{ \"buyDate\": 1501015508000, \"firebasePushID:\": \"123456\", \"productCategory\": \"Comida\", \"productName\": \"LUCCAS TESTE OLD\", \"productPrice\": 1.00, \"userDisplayName\": \"Luccas Xavier\" }' 'https://kantina-3606f.firebaseio.com/usuarios/Luccas Xavier/compras/123456.json'")
     sleep(3)
   end
 end

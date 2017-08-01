@@ -3,11 +3,11 @@ class FiltrolistaScreen < AndroidScreenBase
   trait(:trait)                 { "* id:'#{btn_search}'" }
 
   # Declare all the elements of this screen
-  element(:btn_search)                 { 'widget_search_view' }
-  element(:tb_filter)                  { 'peding' }
+  element(:btn_search)                 { 'search_button' }
+  element(:tb_filter)                  { 'search_src_text' }
   element(:tv_product)                 { 'text_view_product_name' }
-  element(:btn_x_clean)                { 'peding' }
-  element(:btn_goback_home)            { 'peding' }
+  element(:btn_x_clean)                { 'search_close_btn' }
+  #element(:btn_goback_home)            { 'tap_when_element_exists("android.widget.ImageButton index:0")' }
 
   # Declare all actions of this screen
   def touch_btn_search
@@ -15,7 +15,8 @@ class FiltrolistaScreen < AndroidScreenBase
   end
 
   def check_visible_return_btn
-      visible?(btn_goback_home)
+      #visible?(btn_goback_home)
+      element_exists("android.widget.ImageButton index:0")
   end
 
   def filter_not_exists
@@ -40,7 +41,7 @@ class FiltrolistaScreen < AndroidScreenBase
     if temp.count > 1
       return false
     else
-      temp[0] == "ITUBAÍNA"
+      temp[0] == "Itubaína"
     end
   end
 
@@ -52,10 +53,12 @@ class FiltrolistaScreen < AndroidScreenBase
     touch_screen_element(btn_x_clean)
   end
 
-  def check_qt_products
-    qt = query("* id:'text_view_product_name'", :text).count
-    temp = `curl -s 'https://kantina-3606f.firebaseio.com/produtos.json' | grep -o \"productCategory\" | wc -l`
-    qt == temp
+  def check_text_search
+    text = query("* id:'search_src_text'", :text)
+    text[0] == ''
+    #qt = query("* id:'text_view_product_name'", :text).count
+    #temp = `curl -s 'https://kantina-3606f.firebaseio.com/desenvolvimento/produtos.json' | grep -o \"productCategory\" | wc -l`
+    #qt == temp
   end
 
 end

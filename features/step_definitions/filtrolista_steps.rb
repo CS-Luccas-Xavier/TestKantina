@@ -33,7 +33,7 @@ Quando(/^clicar no X para limpar o filtro$/) do
 end
 
 Então(/^todos os produtos deverão aparecer na tela\.$/) do
-  fail 'Os produtos não apareceram corretamente.' unless @pages.check_qt_products
+  fail 'Os produtos não apareceram corretamente.' unless @pages.check_text_search
 end
 
 Então(/^a seta para voltar para outra página deverá sumir$/) do
