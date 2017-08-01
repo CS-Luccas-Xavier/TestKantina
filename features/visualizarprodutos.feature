@@ -13,3 +13,9 @@ Cenario: Validar ordem alfabética dos produtos
     Dado que a aplicação esteja na página de lista de produtos
     Quando eu verificar se existe mais de um produto na tela
     Então os produtos exibidos deverão estar em ordem alfabética.
+
+Cenario: Verificar se produtos estão aparecendo na lista
+    Dado que o usuário tenha logado com sucesso
+    E que o celular esteja em modo avião
+    Quando eu acessar a lista de produtos
+    Então validaremos se o item possui a descrição, valor e categoria.

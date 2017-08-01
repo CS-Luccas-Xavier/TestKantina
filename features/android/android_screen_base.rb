@@ -220,4 +220,20 @@ class AndroidScreenBase < Calabash::ABase
     @@old_actual_value = value[0]
   end
 
+  def turn_onoff_airplane_mode
+    system('adb shell am start -a android.settings.AIRPLANE_MODE_SETTINGS >null')
+    system('adb shell input keyevent 19')
+    system('adb shell input keyevent 61')
+    system('adb shell input keyevent 61')
+    system('adb shell input keyevent 61')
+    system('adb shell input keyevent 61')
+    system('adb shell input keyevent 61')
+    system('adb shell input keyevent 61')
+    system('adb shell input keyevent 61')
+    system('adb shell input keyevent 66')
+    system('adb shell input keyevent KEYCODE_APP_SWITCH')
+    system('adb shell input keyevent 20')
+    system('adb shell input keyevent DEL')
+    system('adb shell input tap 400 400')
+  end
 end
