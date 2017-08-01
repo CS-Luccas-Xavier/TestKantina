@@ -34,3 +34,11 @@ Cenário: Cancelamento inválido da compra
   E exista um produto que foi comprado a mais de 24 horas
   Quando eu cancelo uma compra que foi efetuada mais de 24h atrás
   Então recebo uma mensagem que não é possivel cancelar esse produto
+
+Cenario: Validar cancelar compra sem conexão com a internet
+  Dado que o usuário tenha logado com sucesso
+  E que a aplicação esteja na página de fatura
+  E exista um produto que foi comprado a menos de 24 horas
+  E que o celular esteja em modo avião
+  Quando eu cancelo uma compra
+  Então uma mensagem será exibida informando que o celular está sem conexão
