@@ -23,3 +23,13 @@ end
 Então(/^uma mensagem será exibida informando a máscara correta$/) do
   fail "Mensagem de erro diferente do esperado" unless @pages.check_msg_invalid_user
 end
+
+
+Dado(/^que o celular esteja em modo avião$/) do
+  @pages.turn_onoff_airplane_mode
+end
+
+Então(/^uma mensagem será exibida informando que o celular está sem conexão$/) do
+  @pages.turn_onoff_airplane_mode
+  fail "Mensagem de erro de conexão não foi exibida" unless @pages.check_internet
+end
