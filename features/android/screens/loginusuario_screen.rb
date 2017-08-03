@@ -12,15 +12,15 @@ class LoginusuarioScreen < AndroidScreenBase
   end
 
   def touch_valid_email
-    sleep(1)
+    sleep(3)
     system('adb shell input tap 564 840')
-    sleep(5)
+    sleep(2)
   end
 
   def touch_invalid_email
-    sleep(1)
+    sleep(3)
     system('adb shell input tap 536 1034')
-    sleep(5)
+    sleep(2)
   end
 
   def check_msg_invalid_user
@@ -31,5 +31,4 @@ class LoginusuarioScreen < AndroidScreenBase
   def check_btn_login_visible
     visible?(btn_login)
   end
-
 end
