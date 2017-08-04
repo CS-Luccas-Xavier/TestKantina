@@ -17,8 +17,8 @@ Cenario: Validar mensagem (Toast) ao cancelar compra
   Então uma mensagem informará que o item foi deletado com sucesso
 
 Cenario: Desistir de cancelar uma compra (Cancelar msg de confirmação)
-  Dado que a aplicação esteja na página de fatura
-  E exista um produto que foi comprado a menos de 24 horas
+  Dado exista um produto que foi comprado a menos de 24 horas
+  E que a aplicação esteja na página de fatura
   Quando eu desistir de cancelar uma compra
   Então o produto permanecerá na lista
   E o valor permanecerá o mesmo
@@ -36,8 +36,7 @@ Cenário: Cancelamento inválido da compra
   Então recebo uma mensagem que não é possivel cancelar esse produto
 
 Cenario: Validar cancelar compra sem conexão com a internet
-  Dado que o usuário tenha logado com sucesso
-  E que a aplicação esteja na página de fatura
+  Dado que a aplicação esteja na página de fatura
   E exista um produto que foi comprado a menos de 24 horas
   E que o celular esteja em modo avião
   Quando eu cancelo uma compra

@@ -22,3 +22,7 @@ end
 Então(/^os produtos exibidos deverão estar em ordem alfabética\.$/) do
   fail "Ordenação incorreta" unless @pages.check_orderby_name_screen
 end
+
+Quando(/^eu acessar a lista de produtos$/) do
+  @pages.touch_btn_purchase
+end

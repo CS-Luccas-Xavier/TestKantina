@@ -10,9 +10,12 @@ Então(/^validaremos se o valor está informado corretamente$/) do
 end
 
 Dado(/^que o usuário tenha logado com sucesso$/) do
-  sleep(3)
-  @pages = page(LoginusuarioScreen).await(timeout: 5)
-  @pages.touch_btn_login
-  @pages.touch_valid_email
-  sleep(3)
+  @pages = page(AndroidScreenBase)
+  if(@pages.require_login)
+    sleep(2)
+    @pages = page(LoginusuarioScreen).await(timeout: 5)
+    @pages.touch_btn_login
+    @pages.touch_valid_email
+    sleep(2)
+  end
 end

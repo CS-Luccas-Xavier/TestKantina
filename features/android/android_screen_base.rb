@@ -222,18 +222,20 @@ class AndroidScreenBase < Calabash::ABase
 
   def turn_onoff_airplane_mode
     system('adb shell am start -a android.settings.AIRPLANE_MODE_SETTINGS >null')
-    system('adb shell input keyevent 19')
-    system('adb shell input keyevent 61')
-    system('adb shell input keyevent 61')
-    system('adb shell input keyevent 61')
-    system('adb shell input keyevent 61')
-    system('adb shell input keyevent 61')
-    system('adb shell input keyevent 61')
-    system('adb shell input keyevent 61')
-    system('adb shell input keyevent 66')
+    sleep(1)
+    system('adb shell input tap 948 1235')
     system('adb shell input keyevent KEYCODE_APP_SWITCH')
     system('adb shell input keyevent 20')
     system('adb shell input keyevent DEL')
     system('adb shell input tap 400 400')
+  end
+
+  def check_internet
+    temp = query("*", :text)
+    temp.include?("SEM CONEXÃO.")
+  end
+
+  def require_login
+    element_exists("* id:'button_google_sign_in'")
   end
 end

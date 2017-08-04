@@ -14,8 +14,8 @@ Cenario: Validar ordem alfabética dos produtos
     Quando eu verificar se existe mais de um produto na tela
     Então os produtos exibidos deverão estar em ordem alfabética.
 
+@erro
 Cenario: Validar mensagem de validação ao tentar carregar a lista de produtos sem conexão a internet
-    Dado que o usuário tenha logado com sucesso
-    E que o celular esteja em modo avião
+    Dado que o celular esteja em modo avião
     Quando eu acessar a lista de produtos
     Então validaremos se o item possui a descrição, valor e categoria.
