@@ -12,7 +12,7 @@ Quando(/^escolher a conta válida$/) do
 end
 
 Então(/^a página de fatura será carregada\.$/) do
-  @pages = page(VisualizarvaloratualgastoScreen).await(timeout: 5)
+  @pages = page(VisualizarvaloratualgastoScreen).await(timeout: 15)
   fail "Página não carregada, componente não existe" unless @pages.check_visible_actual_value
 end
 
@@ -30,6 +30,7 @@ Dado(/^que o celular esteja em modo avião$/) do
 end
 
 Então(/^uma mensagem será exibida informando que o celular está sem conexão$/) do
+  validar_msg = @pages.check_internet
   @pages.turn_onoff_airplane_mode
-  fail "Mensagem de erro de conexão não foi exibida" unless @pages.check_internet
+  fail "Mensagem de erro de conexão não foi exibida" unless validar_msg 
 end

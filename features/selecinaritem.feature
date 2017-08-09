@@ -3,22 +3,19 @@ Funcionalidade: Selecionar item para compra
   Como usuario do aplicativo Kantina
   Tenho a necessidade de selecionar os produtos disponíveis na cozinha para realizar a compra.
 
-Cenario: Selecionar produto e confirmar a compra
-  Dado que o usuário tenha logado com sucesso
-  E que a aplicação esteja na página de lista de produtos
-  Quando eu selecionar um produto
-  E confirmar a compra
-  Então uma mensagem de confirmação de compra com sucesso será exibida.
+Contexto:
+  Dado que estou logado
+  E que acesso a tela de lista de produtos
 
-Cenario: Selecionar produto e cancelar a compra
-  Dado que a aplicação esteja na página de lista de produtos
-  Quando eu selecionar um produto
-  E cancelar a compra
-  Então o produto não será comprado
+Cenario: Realizar compra
+  Quando eu realizo uma compra
+  Então sou informado que a compra foi realizada com sucesso.
 
-Cenario: Tentar realizar uma compra e cair a conexão com a internet
-  Dado que a aplicação esteja na página de lista de produtos
-  E que o celular esteja em modo avião
-  Quando eu selecionar um produto
-  E confirmar a compra
-  Então uma mensagem será exibida informando que o celular está sem conexão
+Cenario: Não efetivar a compra
+  Quando tento comprar, mas não confirmo a compra do produto
+  Então a compra não é efetivada
+
+Cenario: Comprar sem conexão com a internet
+  Dado que o celular esteja em modo avião
+  Quando eu realizo uma compra
+  Então sou informado que não existe conexão com a internet
