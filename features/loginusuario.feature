@@ -4,20 +4,17 @@ Funcionalidade: Selecionar item para compra
   Preciso realizar login para realizar a compra de produtos.
 
 Contexto:
-  Dado que a aplicação esteja na página de login
+  Dado que eu estou na tela de login
 
-Cenario: Logar com usuário inválido Ex: @gmail
-  Quando eu tocar para realizar login
-  E escolher uma conta inválida
-  Então uma mensagem será exibida informando a máscara correta
+Cenario: Login com provedor inválido
+  Quando eu logar com uma conta inválida
+  Então visualizo a mensagem para logar com o provedor correto
+
+Cenario: Login com provedor válido
+  Quando eu logar com uma conta da concrete
+  Então visualizo a tela principal
 
 Cenario: Tentar realizar login sem conexão com a internet
   Dado que o celular esteja em modo avião
-  Quando eu tocar para realizar login
-  E escolher a conta válida
-  Então uma mensagem será exibida informando que o celular está sem conexão
-
-Cenario: Logar com usuário válido @concrete
-  Quando eu tocar para realizar login
-  E escolher a conta válida
-  Então a página de fatura será carregada.
+  Quando eu logar com uma conta da concrete
+  Então sou informado que não existe conexão com a internet

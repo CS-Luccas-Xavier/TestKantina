@@ -3,28 +3,23 @@ Funcionalidade: Visualizar os produtos da fatura atual
   Como usuario do aplicativo Kantina
   Preciso visualizar os produtos da minha fatura atual
 
-Cenario: Verificar se os itens comprados estão aparecendo na tela.
-  Dado que o usuário tenha logado com sucesso
-  E que a aplicação esteja na página de lista de produtos
-  Quando eu selecionar um produto
-  E confirmar a compra
-  Então a tela volta para a pagina de fatura
-  E o item é adicionado na lista da fatura atual
+Contexto:
+  Dado que eu estou logado
 
-Cenario: Verificar se o valor total atual está igual a soma dos produtos listados.
-  Dado que a aplicação esteja na página de fatura
-  E que a aplicação esteja na página de lista de produtos
-  Quando eu selecionar um produto
-  E confirmar a compra
-  Então a tela volta para a pagina de fatura
-  E o valor atual total é incrementado com o valor do produto comprado
+Cenario: Atualizar lista de itens comprados.
+  Dado que acesso a tela de lista de produtos
+  Quando realizo uma compra
+  Então visualizo minha compra na lista de itens comprados
 
-Cenario: Verificar se existe a mensagem quando não houver compras
-  Dado que a aplicação esteja na página de fatura
-  Quando não existam compras cadastradas para esse usuário
-  Então uma mensagem será exibida para confirmar que não existe compra no mês atual
+Cenario: Valor da fatura atual atualizado por nova compra.
+  Dado que acesso a tela de lista de produtos
+  Quando realizo uma compra
+  Então meu valor atual total é incrementado com o valor da nova compra
 
-Cenario: Validar se as compras estão ordenadas por mais recente para mais antiga
-  Dado que a aplicação esteja na página de fatura
-  Quando existam mais de uma compra em datas diferentes
-  Então as compras estarão ordenadas da mais recente para mais antiga
+Cenario: Lista de compras vazia.
+  Quando eu não tiver realizado nenhuma compra
+  Então sou informado que não realizei nenhuma compra no mês atual
+
+Cenario: Compras sendo exibidas em ordem decrescente por data de compra
+  Quando faço compras em datas diferentes
+  Então visualizo minhas compras em ordem decrescente por data de compra

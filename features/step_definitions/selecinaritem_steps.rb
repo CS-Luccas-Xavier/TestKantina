@@ -1,6 +1,6 @@
 Quando(/^eu selecionar um produto$/) do
   sleep(3)
-  @pages = page(SelecinaritemScreen).await(timeout: 5)
+  @pages = page(SelecinaritemScreen).await(timeout: 15)
   @pages.touch_product
 end
 

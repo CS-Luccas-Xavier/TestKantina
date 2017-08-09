@@ -4,7 +4,6 @@ Funcionalidade: Visualizar valores referente ao mês passado (fechado)
   Preciso visualizar o valor das compras realizadas no mês passado e que serão pagos.
 
 Cenario: Verificar se valor fechado está sendo exibido
-    Dado que o usuário tenha logado com sucesso
-    E que a aplicação esteja na página de fatura
-    Quando eu verificar se o valor fechado está sendo exibido
-    Então validaremos se o valor está informado corretamente
+    Dado que eu esteja logado
+    Quando eu fechar a minha fatura
+    Então visualizo o valor das minhas compras do mês passado

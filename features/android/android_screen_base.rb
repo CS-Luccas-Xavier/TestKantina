@@ -231,8 +231,9 @@ class AndroidScreenBase < Calabash::ABase
   end
 
   def check_internet
+    sleep(4)
     temp = query("*", :text)
-    temp.include?("SEM CONEXÃO.")
+    temp.include?("There is no network connection")
   end
 
   def require_login
