@@ -57,7 +57,7 @@ class DeletarcompraScreen < AndroidScreenBase
   def check_new_actual_value
     actual_total_price = query("* id:'text_view_price_last_purchase'", :text)
     sum = @@old_actual_value.to_f - @@screen_price_products[0].to_f
-    actual_total_price[0].to_f == sum.to_f
+    actual_total_price[0].to_f.round(2) == sum.to_f.round(2)
   end
 
   def long_touch_last_purchase

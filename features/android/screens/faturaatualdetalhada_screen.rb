@@ -15,11 +15,7 @@ class FaturaatualdetalhadaScreen < AndroidScreenBase
   def check_new_total_value
     product_price = query("* id:'text_view_price_last_purchase'", :text)
     soma = @@product_price.to_f + @@old_actual_value.to_f
-    puts @@product_price.to_f
-    puts @@old_actual_value.to_f
-    puts soma.to_f
-    puts product_price[0].to_f
-    soma.to_f == product_price[0].to_f
+    soma.to_f.round(2) == product_price[0].to_f.round(2)
   end
 
   def check_order_by_date

@@ -7,8 +7,8 @@ Contexto:
   Dado que estou logado
   E que acesso a tela de lista de produtos
 
-Cenario: Realizar compra
-  Quando eu realizo uma compra
+Cenario: Realizar compra com sucesso
+  Quando realizo uma compra
   Então sou informado que a compra foi realizada com sucesso.
 
 Cenario: Não efetivar a compra
@@ -16,6 +16,6 @@ Cenario: Não efetivar a compra
   Então a compra não é efetivada
 
 Cenario: Comprar sem conexão com a internet
-  Dado que o celular esteja em modo avião
-  Quando eu realizo uma compra
+  Dado que eu esteja sem conexão
+  Quando realizo uma compra
   Então sou informado que não existe conexão com a internet

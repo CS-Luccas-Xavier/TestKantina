@@ -1,21 +1,8 @@
-
-Quando(/^eu verificar se o valor fechado está sendo exibido$/) do
-  sleep(2)
-  @pages = page(VisualizarvalorfechadogastoScreen).await(timeout: 15)
-  fail "Valor fechado não está aparecendo na tela." unless @pages.check_closed_value_visible
+Quando(/^eu fechar a minha fatura$/) do
+ system("curl -X DELETE 'https://kantina-3606f.firebaseio.com/desenvolvimento/usuarios/Luccas Xavier/invoices/previous.json'")
 end
 
-Então(/^validaremos se o valor está informado corretamente$/) do
-  @pages.check_content_closed_value
-end
-
-Dado(/^que o usuário tenha logado com sucesso$/) do
-  sleep(3)
-  @pages = page(AndroidScreenBase)
-  if(@pages.require_login)
-    @pages = page(LoginusuarioScreen).await(timeout: 5)
-    @pages.touch_btn_login
-    @pages.touch_valid_email
-    sleep(2)
-  end
+Então(/^visualizo o valor das minhas compras do mês passado$/) do
+  @pages = page(VisualizarvalorfechadogastoScreen).await(timeout: 10)
+ fail 'Valor inválido' unless @pages.check_zero_closed_value
 end

@@ -3,41 +3,38 @@ Funcionalidade: Deletar compra realizada (Cancelamento)
   Como usuario do aplicativo Kantina
   Preciso cancelar um produto que desisti de compra-lo.
 
-Cenario: Validar remoção de item da lista ao cancelar compra efetuada
-  Dado que o usuário tenha logado com sucesso
-  E que a aplicação esteja na página de fatura
-  E exista um produto que foi comprado a menos de 24 horas
-  Quando eu cancelo uma compra
-  Então o produto será removido da lista
+Contexto:
+  Dado que estou logado
+
+Cenario: Remover produto comprado da lista de fatura
+  E que minha última compra tenha sido realizada em menos de 24hrs
+  Quando cancelo essa compra
+  Então minha compra é removida da fatura
 
 Cenario: Validar mensagem (Toast) ao cancelar compra
-  Dado que a aplicação esteja na página de fatura
-  E exista um produto que foi comprado a menos de 24 horas
-  Quando eu cancelo uma compra
-  Então uma mensagem informará que o item foi deletado com sucesso
+  E que minha última compra tenha sido realizada em menos de 24hrs
+  Quando cancelo essa compra
+  Então visualizo uma mensagem informando que a compra foi excluída
 
 Cenario: Desistir de cancelar uma compra (Cancelar msg de confirmação)
-  Dado exista um produto que foi comprado a menos de 24 horas
-  E que a aplicação esteja na página de fatura
-  Quando eu desistir de cancelar uma compra
-  Então o produto permanecerá na lista
-  E o valor permanecerá o mesmo
+  E que minha última compra tenha sido realizada em menos de 24hrs
+  Quando desisto de cancelar essa compra
+  Então minha fatura permanece com essa compra
 
-Cenario: Validar correção de valor atual após remover item
-  Dado que a aplicação esteja na página de fatura
-  E exista um produto que foi comprado a menos de 24 horas
-  Quando eu cancelo uma compra
-  Então o valor da fatura atual será atualizado
+Cenario: Validar valor atual após remover item
+  E que minha última compra tenha sido realizada em menos de 24hrs
+  E guardo o antigo valor atual
+  Quando cancelo essa compra
+  Então o valor da minha fatura é atualizado
 
+@erro
 Cenário: Cancelamento inválido da compra
-  Dado que a aplicação esteja na página de fatura
-  E exista um produto que foi comprado a mais de 24 horas
-  Quando eu cancelo uma compra que foi efetuada mais de 24h atrás
-  Então recebo uma mensagem que não é possivel cancelar esse produto
+  E que minha última compra tenha sido realizada a mais de 24hrs
+  Quando cancelo essa compra antiga
+  Então sou alertado que o tempo de cancelamento expirou
 
-Cenario: Validar cancelar compra sem conexão com a internet
-  Dado que a aplicação esteja na página de fatura
-  E exista um produto que foi comprado a menos de 24 horas
-  E que o celular esteja em modo avião
-  Quando eu cancelo uma compra
-  Então uma mensagem será exibida informando que o celular está sem conexão
+Cenario: Cancelar compra sem conexão com a internet
+  E que minha última compra tenha sido realizada em menos de 24hrs
+  E que eu esteja sem conexão
+  Quando cancelo essa compra
+  Então sou informado que não existe conexão com a internet

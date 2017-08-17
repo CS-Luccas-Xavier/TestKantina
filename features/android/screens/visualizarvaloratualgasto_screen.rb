@@ -16,7 +16,7 @@ class VisualizarvaloratualgastoScreen < AndroidScreenBase
     visible?(tv_actual_value)
   end
 
-  def check_content_actual_value
+  def check_zero_actual_value
     temp = query("* id:'text_view_price_last_purchase'", :text)
     temp[0] == "0.00"
   end

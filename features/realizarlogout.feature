@@ -4,6 +4,6 @@ Funcionalidade: Acessar menu para realizar Logout
   Preciso desconectar da minha conta atual.
 
 Cenario: Realizar log out da conta logada
-  Dado que eu estou logado
+  Dado que estou logado
   Quando faço o Logout do aplicativo
   Então visualizo a tela de login

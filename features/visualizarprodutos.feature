@@ -15,5 +15,6 @@ Cenario: Verificar ordenação dos produtos
     Então visualizo os produtos em ordem alfabética
 
 Cenario: Carregar lista de produtos sem conexão a internet
+    Dado que eu esteja sem conexão
     Quando eu acesso a lista de produtos
     Então sou informado que não existe conexão com a internet

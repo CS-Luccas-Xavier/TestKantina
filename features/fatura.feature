@@ -4,7 +4,7 @@ Funcionalidade: Visualizar o status da fatura
   Preciso visualizar o status de pagamento da minha fatura (pendente ou pago).
 
 Contexto:
-  Dado que eu estou lojado
+  Dado que estou logado
 
 Cenario: Pagar fatura do mês anterior
   Quando realizo o pagamento da fatura do mês anterior

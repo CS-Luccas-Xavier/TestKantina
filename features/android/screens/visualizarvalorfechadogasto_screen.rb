@@ -9,7 +9,8 @@ class VisualizarvalorfechadogastoScreen < AndroidScreenBase
     visible?(tv_closed_value)
   end
 
-  def check_content_closed_value
-    tv_closed_value != ""
+  def check_zero_closed_value
+    temp = query("* id:'text_view_last_invoice'", :text)
+    temp[0] == "0,00"
   end
 end

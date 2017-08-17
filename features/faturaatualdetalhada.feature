@@ -4,15 +4,18 @@ Funcionalidade: Visualizar os produtos da fatura atual
   Preciso visualizar os produtos da minha fatura atual
 
 Contexto:
-  Dado que eu estou logado
+  Dado que estou logado
 
+@erro
 Cenario: Atualizar lista de itens comprados.
   Dado que acesso a tela de lista de produtos
+  E guardo o produto que vou comprar
   Quando realizo uma compra
   Então visualizo minha compra na lista de itens comprados
 
 Cenario: Valor da fatura atual atualizado por nova compra.
   Dado que acesso a tela de lista de produtos
+  E guardo o antigo valor atual
   Quando realizo uma compra
   Então meu valor atual total é incrementado com o valor da nova compra
 
