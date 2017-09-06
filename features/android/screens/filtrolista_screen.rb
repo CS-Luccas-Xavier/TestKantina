@@ -29,20 +29,17 @@ class FiltrolistaScreen < AndroidScreenBase
   end
 
   def filter_words_accentuation
-    enter("ITUBAINA", tb_filter)
+    enter("PIRAQUE", tb_filter)
   end
 
   def filter_upcase_downcase
-    enter("ItuBAínA", tb_filter)
+    enter("PiRAqUE", tb_filter)
   end
 
   def check_filter
-    temp = query("* id:'text_view_product_name'", :text)
-    if temp.count > 1
-      return false
-    else
-      temp[0] == "Itubaína"
-    end
+    prod = query("* id:'text_view_product_name'", :text)
+    puts prod
+    prod[0].include?("PIRAQUÊ")
   end
 
   def enter_text_value
@@ -57,7 +54,7 @@ class FiltrolistaScreen < AndroidScreenBase
     text = query("* id:'search_src_text'", :text)
     text[0] == ''
     #qt = query("* id:'text_view_product_name'", :text).count
-    #temp = `curl -s 'https://kantina-3606f.firebaseio.com/desenvolvimento/produtos.json' | grep -o \"productCategory\" | wc -l`
+    #temp = `curl -s 'https://kantina-3606f.firebaseio.com/desenvolvimento/produtos.json?auth=XQch1IAHNxauN9hxVx3Zq6vdmF0yuzRxYum009sn' | grep -o \"productCategory\" | wc -l`
     #qt == temp
   end
 

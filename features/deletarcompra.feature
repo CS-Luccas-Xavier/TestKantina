@@ -27,12 +27,12 @@ Cenario: Validar valor atual após remover item
   Quando cancelo essa compra
   Então o valor da minha fatura é atualizado
 
-@erro
 Cenário: Cancelamento inválido da compra
   E que minha última compra tenha sido realizada a mais de 24hrs
   Quando cancelo essa compra antiga
   Então sou alertado que o tempo de cancelamento expirou
 
+@wifi
 Cenario: Cancelar compra sem conexão com a internet
   E que minha última compra tenha sido realizada em menos de 24hrs
   E que eu esteja sem conexão

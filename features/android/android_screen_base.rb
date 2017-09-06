@@ -220,14 +220,15 @@ class AndroidScreenBase < Calabash::ABase
     @@old_actual_value = value[0]
   end
 
-  def turn_onoff_airplane_mode
-    system('adb shell am start -a android.settings.AIRPLANE_MODE_SETTINGS >null')
-    sleep(1)
-    system('adb shell input tap 948 1235')
-    system('adb shell input keyevent KEYCODE_APP_SWITCH')
-    system('adb shell input keyevent 20')
-    system('adb shell input keyevent DEL')
-    system('adb shell input tap 400 400')
+  def turn_off_data
+    system "adb shell svc data disable"
+    # system('adb shell am start -a android.settings.AIRPLANE_MODE_SETTINGS >null')
+    # sleep(1)
+    # system('adb shell input tap 948 1235')
+    # system('adb shell input keyevent KEYCODE_APP_SWITCH')
+    # system('adb shell input keyevent 20')
+    # system('adb shell input keyevent DEL')
+    # system('adb shell input tap 400 400')
   end
 
   def check_internet
@@ -238,5 +239,10 @@ class AndroidScreenBase < Calabash::ABase
 
   def require_login
     element_exists("* id:'button_google_sign_in'")
+  end
+
+  def delete_all_buys
+    system("curl -X DELETE \ 'https://kantina-3606f.firebaseio.com/desenvolvimento/usuarios/Luccas Xavier/compras.json?auth=XQch1IAHNxauN9hxVx3Zq6vdmF0yuzRxYum009sn'")
+    sleep(4)
   end
 end

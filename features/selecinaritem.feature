@@ -15,6 +15,7 @@ Cenario: Não efetivar a compra
   Quando tento comprar, mas não confirmo a compra do produto
   Então a compra não é efetivada
 
+@wifi
 Cenario: Comprar sem conexão com a internet
   Dado que eu esteja sem conexão
   Quando realizo uma compra

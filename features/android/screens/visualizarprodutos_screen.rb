@@ -13,18 +13,18 @@ class VisualizarprodutosScreen < AndroidScreenBase
   end
 
   def check_desc_prod
-    temp = query("* id:'text_view_product_name'", :text)
-    temp.include?("") ? false : true
+    descProducts = query("* id:'text_view_product_name'", :text)
+    descProducts.include?("") ? false : true
   end
 
   def check_value_prod
-    temp = query("* id:'text_view_product_price'", :text)
-    temp.include?("") ? false : true
+    valueProducts = query("* id:'text_view_product_price'", :text)
+    valueProducts.include?("") ? false : true
   end
 
   def check_qt_itens
-    temp = query("* id:'text_view_product_price'", :text).count
-    temp > 1
+    qtItens = query("* id:'text_view_product_price'", :text).count
+    qtItens > 1
   end
 
   def check_orderby_name_screen
@@ -33,5 +33,4 @@ class VisualizarprodutosScreen < AndroidScreenBase
     namesEsperado.sort!
     namesAtual == namesEsperado
   end
-
 end

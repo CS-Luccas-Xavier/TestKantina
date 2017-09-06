@@ -12,6 +12,10 @@ class RealizarlogoutScreen < AndroidScreenBase
   end
 
   def touch_btn_logout
-    touch_screen_element(btn_logout)
+    touch_element_by_index('title',2)
+  end
+
+  def touch_btn_statistics
+    touch_element_by_index('title',0)
   end
 end

@@ -6,7 +6,7 @@ Funcionalidade: Visualizar os produtos da fatura atual
 Contexto:
   Dado que estou logado
 
-@erro
+@bug
 Cenario: Atualizar lista de itens comprados.
   Dado que acesso a tela de lista de produtos
   E guardo o produto que vou comprar

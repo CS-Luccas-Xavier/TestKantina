@@ -1,0 +1,7 @@
+Nexus5x:
+top: 80
+right: 10
+left: 90
+bottom: 50
+igonre-top: 10
+statistics_screen: {mask_region: [66,424,340,478]}

@@ -7,6 +7,7 @@ Contexto:
   Dado que estou logado
   E que acesso a tela de lista de produtos
 
+@bug
 Cenario: Filtrar produto inexistente.
   Quando eu pesquiso um produto inexistente
   Então sou informado que não existe nenhum produto com aquele nome

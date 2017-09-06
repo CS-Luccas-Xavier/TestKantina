@@ -1,10 +1,6 @@
-
-
 Então(/^o valor permanecerá o mesmo$/) do
   fail 'O valor foi alterado.' unless @pages.check_same_actual_value
 end
-
-#-----
 
 Dado(/^que minha última compra tenha sido realizada em menos de (\d+)hrs$/) do |arg1|
   @pages = page(DeletarcompraScreen).await(timeout: 5)

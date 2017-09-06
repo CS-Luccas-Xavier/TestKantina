@@ -1,5 +1,6 @@
 Dado(/^que eu esteja sem conexão$/) do
-  @pages.turn_onoff_airplane_mode
+  sleep(1)
+  @pages.turn_off_data
 end
 
 Dado(/^que eu estou na tela de login$/) do
@@ -31,6 +32,5 @@ end
 
 Então(/^sou informado que não existe conexão com a internet$/) do
   validar_msg = @pages.check_internet
-  @pages.turn_onoff_airplane_mode
   fail "Mensagem de erro de conexão não foi exibida" unless validar_msg
 end

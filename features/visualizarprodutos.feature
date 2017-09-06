@@ -10,10 +10,12 @@ Cenario: Verificar dados do produto na lista
     Quando eu acesso a lista de produtos
     Então visualizo produtos com descrição, nome e categoria
 
+@bug
 Cenario: Verificar ordenação dos produtos
     Quando eu acesso a lista de produtos
     Então visualizo os produtos em ordem alfabética
 
+@wifi
 Cenario: Carregar lista de produtos sem conexão a internet
     Dado que eu esteja sem conexão
     Quando eu acesso a lista de produtos
